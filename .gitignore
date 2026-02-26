@@ -1,0 +1,139 @@
+# .NET
+
+## Build results
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]uild/
+
+## Visual Studio
+
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio cache options
+.vs/
+
+## NuGet
+
+*.nupkg
+# NuGet personal access tokens and API keys
+nuget.config
+
+## Packages directory
+packages/
+
+## Build results
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]uild/
+
+## .NET Core
+
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## ASP.NET Core
+
+publish/
+Properties/launchSettings.json
+
+## IDE
+
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+## OS
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+## Test results
+
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+
+## NuGet packages
+
+*.nupkg
+**/packages/*
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Dependency directories
+
+node_modules/
+jspm_packages/
+
+## Optional npm cache directory
+
+.npm
+
+## Optional eslint cache
+
+.eslintcache
+
+## Optional TypeScript cache
+
+*.tsbuildinfo
+
+## Optional SKU
+
+*.pfx
+*.key
+*.snk
+
+## Others
+
+*.cache
+*.log
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.user
+*.userprefs
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+*.bak
+appsettings.json
+coze_oauth_config.json
+AGENTS.md
+CLAUDE.md
+coverage-report
