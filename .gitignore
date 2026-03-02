@@ -137,3 +137,5 @@ coze_oauth_config.json
 AGENTS.md
 CLAUDE.md
 coverage-report
+
+settings.local.json
