@@ -9,13 +9,6 @@ namespace CozeAspNetCoreExample.Controllers;
 [Route("[controller]")]
 public class HealthController : ControllerBase
 {
-    private readonly ILogger<HealthController> _logger;
-
-    public HealthController(ILogger<HealthController> logger)
-    {
-        _logger = logger;
-    }
-
     /// <summary>
     /// 返回服务的健康状态
     /// </summary>
@@ -23,7 +16,7 @@ public class HealthController : ControllerBase
     [HttpGet]
     public IActionResult Get()
     {
-        _logger.LogInformation("Health check endpoint accessed");
+        // 健康检查是高频调用端点，不记录日志以避免日志膨胀
         return Ok(new { Status = "Healthy", Timestamp = DateTime.UtcNow });
     }
 }

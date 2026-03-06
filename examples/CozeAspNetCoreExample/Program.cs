@@ -11,6 +11,13 @@ builder.Services.AddControllers();
 // 方法 1: 使用配置文件中的Token认证
 builder.Services.AddCozeSdk(builder.Configuration);
 
+// 验证必需的配置项
+var cozeToken = builder.Configuration["Coze:Token"];
+if (string.IsNullOrEmpty(cozeToken))
+{
+    throw new InvalidOperationException("Coze:Token configuration is required. Please set it in appsettings.json or environment variables.");
+}
+
 // 方法 2: 如果使用 JWT OAuth，取消注释下面的代码
 // builder.Services.AddCozeSdkWithJwtOAuth(builder.Configuration, "Coze:Jwt");
 
@@ -39,13 +46,20 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // 添加 CORS 支持
+// 注意：生产环境应配置具体的允许源
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy =>
+    options.AddPolicy("DevelopmentCors", policy =>
     {
-        policy.AllowAnyOrigin();
-        policy.AllowAnyMethod();
-        policy.AllowAnyHeader();
+        // 开发环境允许本地前端访问
+        policy.WithOrigins(
+                "http://localhost:3000",
+                "http://localhost:5173",
+                "http://localhost:8080"
+            )
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials();
     });
 });
 
@@ -68,7 +82,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
-app.UseCors("AllowAll");
+app.UseCors("DevelopmentCors");
 
 app.MapControllers();
 
